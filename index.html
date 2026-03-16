@@ -1,0 +1,541 @@
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osobní Brand Simulator — Budování značky v moderním prostředí</title>
+  <meta name="description" content="Interaktivní simulátor dopadu osobního brandu na kariéru. Posuvníky pro různé dimenze investice a vizualizace dopadů na zaměstnatelnost a kariérní spokojenost.">
+
+  <!-- Fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg aria-label="Personal Brand Simulator" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <circle cx="20" cy="14" r="7" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M30 8l4 4-4 4" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 12H27" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">BrandSim</span>
+      </div>
+      <nav class="header-nav">
+        <a href="#simulator" class="nav-link">Simulátor</a>
+        <a href="#pbe" class="nav-link">PBE Model</a>
+        <a href="#trh" class="nav-link">Trh práce</a>
+        <a href="#data" class="nav-link">Data</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Přepnout režim">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Výzkumem podložený nástroj</div>
+      <h1 class="hero-title">Jak investice do osobního brandu<br><span class="accent">mění tvou kariéru</span></h1>
+      <p class="hero-sub">Pohybuj posuvníky a sleduj v reálném čase, jak čas investovaný do různých dimenzí osobní značky ovlivňuje vnímanou zaměstnatelnost a kariérní spokojenost — na základě reálných akademických dat.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num">3 273</span>
+          <span class="stat-label">účastníků ve studiích</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">43%</span>
+          <span class="stat-label">variability kariérní spokojenosti</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-num">4,3×</span>
+          <span class="stat-label">více uchazečů než míst v ČR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULATOR -->
+  <section class="section" id="simulator">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Kariérní řetězec — simulátor</h2>
+        <p class="section-desc">Nastav úroveň investice v každé dimenzi osobního brandu a sleduj, jak se mění výstupy. Data vycházejí z empiricky validovaných studií (Gorbatov et al., 2021; Frontiers in Psychology, 2019).</p>
+      </div>
+
+      <div class="simulator-layout">
+        <!-- LEFT: Sliders -->
+        <div class="sliders-panel">
+          <div class="panel-label">Vstupy — investice do osobního brandu</div>
+
+          <div class="slider-group" id="sg-linkedin">
+            <div class="slider-header">
+              <div class="slider-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="slider-info">
+                <span class="slider-name">LinkedIn &amp; Online prezentace</span>
+                <span class="slider-category">Online brand</span>
+              </div>
+              <span class="slider-value" id="val-linkedin">20 min/den</span>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" class="slider" id="sl-linkedin" min="0" max="100" value="20" aria-label="Čas na LinkedIn denně">
+              <div class="slider-labels">
+                <span>0 min</span>
+                <span>30 min</span>
+                <span>60+ min</span>
+              </div>
+            </div>
+            <div class="slider-insight" id="ins-linkedin">64 % profesionálů používá LinkedIn jako hlavní platformu pro personal brand</div>
+          </div>
+
+          <div class="slider-group" id="sg-networking">
+            <div class="slider-header">
+              <div class="slider-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="slider-info">
+                <span class="slider-name">Networking &amp; vztahy</span>
+                <span class="slider-category">Offline brand — sociální kapitál</span>
+              </div>
+              <span class="slider-value" id="val-networking">1 akce/měsíc</span>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" class="slider" id="sl-networking" min="0" max="100" value="20" aria-label="Frekvence networkingu">
+              <div class="slider-labels">
+                <span>žádný</span>
+                <span>1–2/měs</span>
+                <span>každý týden</span>
+              </div>
+            </div>
+            <div class="slider-insight" id="ins-networking">Silné profesionální propojení koreluje s vyšší kariérní mobilitou a oborovým uznáním</div>
+          </div>
+
+          <div class="slider-group" id="sg-appearance">
+            <div class="slider-header">
+              <div class="slider-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <div class="slider-info">
+                <span class="slider-name">Vzhled &amp; první dojem</span>
+                <span class="slider-category">Offline brand — vizuální složka</span>
+              </div>
+              <span class="slider-value" id="val-appearance">střední</span>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" class="slider" id="sl-appearance" min="0" max="100" value="40" aria-label="Péče o vzhled a první dojem">
+              <div class="slider-labels">
+                <span>žádná</span>
+                <span>příležitostná</span>
+                <span>cílená</span>
+              </div>
+            </div>
+            <div class="slider-insight" id="ins-appearance">55 % prvního dojmu tvoří vizuální složka — 7 sekund rozhoduje (UCLA / Mehrabian)</div>
+          </div>
+
+          <div class="slider-group" id="sg-authenticity">
+            <div class="slider-header">
+              <div class="slider-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div class="slider-info">
+                <span class="slider-name">Autenticita &amp; konzistence</span>
+                <span class="slider-category">Online + Offline brand</span>
+              </div>
+              <span class="slider-value" id="val-authenticity">střední</span>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" class="slider" id="sl-authenticity" min="0" max="100" value="50" aria-label="Míra autenticity a konzistence">
+              <div class="slider-labels">
+                <span>nízká</span>
+                <span>střední</span>
+                <span>vysoká</span>
+              </div>
+            </div>
+            <div class="slider-insight" id="ins-authenticity">62 % lidí je ochotnějších reagovat na autentický obsah než přeprodukovaný materiál</div>
+          </div>
+
+          <div class="slider-group" id="sg-content">
+            <div class="slider-header">
+              <div class="slider-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <div class="slider-info">
+                <span class="slider-name">Sdílení odbornosti &amp; obsah</span>
+                <span class="slider-category">Kulturní kapitál</span>
+              </div>
+              <span class="slider-value" id="val-content">1× týdně</span>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" class="slider" id="sl-content" min="0" max="100" value="30" aria-label="Frekvence sdílení odborného obsahu">
+              <div class="slider-labels">
+                <span>nikdy</span>
+                <span>1–2/týden</span>
+                <span>každý den</span>
+              </div>
+            </div>
+            <div class="slider-insight" id="ins-content">Studenti sdílející odbornost reportují vyšší sebevědomí a širší síť kontaktů</div>
+          </div>
+
+          <div class="reset-row">
+            <button class="btn-reset" id="btn-reset">Resetovat vše</button>
+            <button class="btn-preset" id="btn-low">Minimální investice</button>
+            <button class="btn-preset" id="btn-high">Strategický přístup</button>
+          </div>
+        </div>
+
+        <!-- RIGHT: Outputs -->
+        <div class="outputs-panel">
+          <div class="panel-label">Výstupy — kariérní dopad</div>
+
+          <!-- Career Chain -->
+          <div class="chain-card">
+            <div class="chain-title">Kariérní řetězec kauzality</div>
+            <div class="chain-flow">
+              <div class="chain-node input-node">
+                <div class="chain-node-label">Osobní brand</div>
+                <div class="chain-node-val" id="chain-brand">–</div>
+              </div>
+              <div class="chain-arrow">
+                <div class="chain-coef" id="coef-brand-emp">β = 0.61</div>
+                <svg viewBox="0 0 40 20" fill="none" width="40" height="20"><path d="M2 10 L34 10 M28 4 L34 10 L28 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="chain-node mid-node">
+                <div class="chain-node-label">Vnímaná zaměstnatelnost</div>
+                <div class="chain-node-val" id="chain-emp">–</div>
+              </div>
+              <div class="chain-arrow">
+                <div class="chain-coef">β = 0.70</div>
+                <svg viewBox="0 0 40 20" fill="none" width="40" height="20"><path d="M2 10 L34 10 M28 4 L34 10 L28 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="chain-node output-node">
+                <div class="chain-node-label">Kariérní spokojenost</div>
+                <div class="chain-node-val" id="chain-sat">–</div>
+              </div>
+            </div>
+            <div class="chain-note">Zdroj: Frontiers in Psychology, 2019, N=263. Model vysvětluje 43 % variability kariérní spokojenosti.</div>
+          </div>
+
+          <!-- Bar Charts -->
+          <div class="bars-card">
+            <div class="bars-header">
+              <div class="bars-title">Skóre výstupů</div>
+              <div class="bars-legend">
+                <span class="legend-dot" style="background:var(--color-bar-brand)"></span><span>Brand score</span>
+                <span class="legend-dot" style="background:var(--color-bar-emp)"></span><span>Zaměstnatelnost</span>
+                <span class="legend-dot" style="background:var(--color-bar-sat)"></span><span>Spokojenost</span>
+              </div>
+            </div>
+            <div class="bars-chart" id="bars-chart">
+              <div class="bar-item">
+                <div class="bar-label">Osobní brand</div>
+                <div class="bar-track">
+                  <div class="bar-fill bar-brand" id="bar-brand"></div>
+                  <span class="bar-pct" id="bar-brand-pct">0%</span>
+                </div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-label">Zaměstnatelnost</div>
+                <div class="bar-track">
+                  <div class="bar-fill bar-emp" id="bar-emp"></div>
+                  <span class="bar-pct" id="bar-emp-pct">0%</span>
+                </div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-label">Kariérní spokojenost</div>
+                <div class="bar-track">
+                  <div class="bar-fill bar-sat" id="bar-sat"></div>
+                  <span class="bar-pct" id="bar-sat-pct">0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Burnout risk -->
+          <div class="burnout-card" id="burnout-card">
+            <div class="burnout-icon">⚠</div>
+            <div class="burnout-content">
+              <div class="burnout-title">Riziko vyhoření</div>
+              <div class="burnout-desc" id="burnout-desc">Nastav posuvníky pro hodnocení.</div>
+            </div>
+            <div class="burnout-level" id="burnout-level">–</div>
+          </div>
+
+          <!-- Competitive context -->
+          <div class="context-card">
+            <div class="context-title">Tvoje pozice na trhu práce</div>
+            <div class="context-region" id="context-region">
+              <span class="region-label">Teplice / Ústecký kraj</span>
+              <span class="region-ratio">~8–9 uchazečů / místo</span>
+            </div>
+            <div class="context-meter">
+              <div class="meter-track">
+                <div class="meter-fill" id="meter-fill"></div>
+                <div class="meter-you" id="meter-you">
+                  <div class="meter-pin"></div>
+                  <span class="meter-you-label">Ty</span>
+                </div>
+              </div>
+              <div class="meter-labels">
+                <span>Průměr regionu</span>
+                <span>Praha / top 10%</span>
+              </div>
+            </div>
+            <div class="context-message" id="context-message">Pohyb posuvníků změní tvou relativní konkurenceschopnost.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PBE MODEL -->
+  <section class="section section-alt" id="pbe">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">PBE Model — 3 dimenze osobní značky</h2>
+        <p class="section-desc">Personal Brand Equity škála (Gorbatov et al.) — validována na 3 273 jedincích napříč 7 vzorky. Jediný empiricky ověřený nástroj pro měření osobního brandu.</p>
+      </div>
+      <div class="pbe-grid">
+        <div class="pbe-card" id="pbe-appeal">
+          <div class="pbe-icon appeal-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="pbe-score" id="pbe-appeal-score">0</div>
+          <div class="pbe-name">Brand Appeal</div>
+          <div class="pbe-desc">Přitažlivost — do jaké míry jsi vnímán jako zajímavý a hodnotný pro ostatní.<br><em>"Tato osoba je někdo, koho chci poznat."</em></div>
+          <div class="pbe-bar-wrap"><div class="pbe-bar appeal-bar" id="pbe-appeal-bar"></div></div>
+          <div class="pbe-factors">Ovlivněno: autenticitou, obsahem, networkinkem</div>
+        </div>
+        <div class="pbe-card" id="pbe-diff">
+          <div class="pbe-icon diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          </div>
+          <div class="pbe-score" id="pbe-diff-score">0</div>
+          <div class="pbe-name">Brand Differentiation</div>
+          <div class="pbe-desc">Odlišnost — jak moc se lišíš od ostatních a vyčníváš z davu.<br><em>"Tato osoba je jedinečná ve svém oboru."</em></div>
+          <div class="pbe-bar-wrap"><div class="pbe-bar diff-bar" id="pbe-diff-bar"></div></div>
+          <div class="pbe-factors">Ovlivněno: odborností, originálním obsahem, vzhledem</div>
+        </div>
+        <div class="pbe-card" id="pbe-rec">
+          <div class="pbe-icon rec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="pbe-score" id="pbe-rec-score">0</div>
+          <div class="pbe-name">Brand Recognition</div>
+          <div class="pbe-desc">Rozpoznatelnost — do jaké míry tě ostatní znají a identifikují.<br><em>"Vím, co tato osoba reprezentuje."</em></div>
+          <div class="pbe-bar-wrap"><div class="pbe-bar rec-bar" id="pbe-rec-bar"></div></div>
+          <div class="pbe-factors">Ovlivněno: LinkedIn, konzistencí, networkinkem</div>
+        </div>
+      </div>
+      <div class="pbe-note">Klíčové zjištění: všechny tři dimenze jsou vzájemně závislé — nestačí být rozpoznatelný bez odlišnosti, ani odlišný bez přitažlivosti.</div>
+    </div>
+  </section>
+
+  <!-- LABOR MARKET -->
+  <section class="section" id="trh">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Konkurence na trhu práce v ČR</h2>
+        <p class="section-desc">Regionální srovnání — proč osobní brand v Ústeckém kraji není volitelný, ale nutný.</p>
+      </div>
+      <div class="market-layout">
+        <div class="market-bars">
+          <div class="market-title">Uchazeči na jedno volné pracovní místo (leden–únor 2026)</div>
+          <div class="market-chart">
+            <div class="market-bar-item" data-value="1.5">
+              <div class="market-bar-label">Praha</div>
+              <div class="market-bar-track">
+                <div class="market-bar-fill Praha" style="width:0%" data-target="15.6"></div>
+                <span class="market-bar-val">~1,5</span>
+              </div>
+            </div>
+            <div class="market-bar-item" data-value="4.3">
+              <div class="market-bar-label">ČR průměr</div>
+              <div class="market-bar-track">
+                <div class="market-bar-fill prumer" style="width:0%" data-target="44.8"></div>
+                <span class="market-bar-val">~4,3</span>
+              </div>
+            </div>
+            <div class="market-bar-item highlight" data-value="8.5">
+              <div class="market-bar-label">Teplice (okres)</div>
+              <div class="market-bar-track">
+                <div class="market-bar-fill teplice" style="width:0%" data-target="88.5"></div>
+                <span class="market-bar-val">~8–9</span>
+              </div>
+            </div>
+            <div class="market-bar-item" data-value="9.1">
+              <div class="market-bar-label">Ústecký kraj</div>
+              <div class="market-bar-track">
+                <div class="market-bar-fill ustecky" style="width:0%" data-target="94.8"></div>
+                <span class="market-bar-val">~9,1</span>
+              </div>
+            </div>
+            <div class="market-bar-item danger" data-value="17.3">
+              <div class="market-bar-label">Děčín</div>
+              <div class="market-bar-track">
+                <div class="market-bar-fill decin" style="width:0%" data-target="100"></div>
+                <span class="market-bar-val">17,3</span>
+              </div>
+            </div>
+          </div>
+          <div class="market-source">Zdroj: ČSÚ — Nezaměstnanost v Ústeckém kraji k 31.1.2026 podle MPSV</div>
+        </div>
+        <div class="market-insights">
+          <div class="insight-card">
+            <div class="insight-num">6×</div>
+            <div class="insight-text">více konkurentů v Ústeckém kraji než v Praze na stejné pracovní místo</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-num">47%</div>
+            <div class="insight-text">personalistů je méně ochotných pozvat kandidáta na pohovor, pokud ho nenajde online</div>
+            <div class="insight-source">DSMN8 Research</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-num">76%</div>
+            <div class="insight-text">vrcholových manažerů důvěřuje firmě více, pokud znají a respektují jejího leadera</div>
+            <div class="insight-source">Harvard Business Review</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-num">52,4%</div>
+            <div class="insight-text">vyšší pravděpodobnost prestižní pozice u atraktivních absolventů MBA 15 let po škole</div>
+            <div class="insight-source">INFORMS, leden 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA TABLE -->
+  <section class="section section-alt" id="data">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Klíčová data pro citaci</h2>
+        <p class="section-desc">Přehled výzkumem podložených statistik použitelných v prezentaci nebo akademické práci.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Statistika</th>
+              <th>Hodnota</th>
+              <th>Zdroj</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Osobní brand → Vnímaná zaměstnatelnost (path koeficient)</td>
+              <td class="td-num accent">γ = 0.61*</td>
+              <td>Frontiers in Psychology, 2019</td>
+            </tr>
+            <tr>
+              <td>Vnímaná zaměstnatelnost → Kariérní spokojenost</td>
+              <td class="td-num accent">β = 0.70*</td>
+              <td>Frontiers in Psychology, 2019</td>
+            </tr>
+            <tr>
+              <td>Vysvětlená variance kariérní spokojenosti modelem</td>
+              <td class="td-num">43%</td>
+              <td>Frontiers in Psychology, 2019, N=263</td>
+            </tr>
+            <tr>
+              <td>Profesionálové s LinkedIn jako hlavní brand platformou</td>
+              <td class="td-num">64%</td>
+              <td>Aurora University Study</td>
+            </tr>
+            <tr>
+              <td>Recruiteři nepozývající kandidáty bez online přítomnosti</td>
+              <td class="td-num">47%</td>
+              <td>DSMN8 Research</td>
+            </tr>
+            <tr>
+              <td>Vizuální složka prvního dojmu (7 sekund)</td>
+              <td class="td-num">55%</td>
+              <td>UCLA / Mehrabian</td>
+            </tr>
+            <tr>
+              <td>Vyšší pravděpodobnost prestižní role — atraktivní absolventi MBA</td>
+              <td class="td-num">52,4%</td>
+              <td>INFORMS, leden 2025</td>
+            </tr>
+            <tr>
+              <td>Lidé vnímaný brand ovlivňuje jejich rozhodnutí o spolupráci</td>
+              <td class="td-num">77%</td>
+              <td>Forbes / Tenet Research</td>
+            </tr>
+            <tr>
+              <td>Personal brand důležitý, ale jen s vlastní strategií</td>
+              <td class="td-num">70% / 15%</td>
+              <td>Tenet Research</td>
+            </tr>
+            <tr>
+              <td>Gen Z preferující autentický obsah před dokonalým</td>
+              <td class="td-num">62%</td>
+              <td>Emerald Publishing 2023</td>
+            </tr>
+            <tr>
+              <td>Kariérní ambice — nejsilnější prediktor budování brandu</td>
+              <td class="td-num">path 0.42</td>
+              <td>Frontiers in Psychology, 2019, N=214</td>
+            </tr>
+            <tr>
+              <td>Uchazeči na místo v ČR (únor 2026)</td>
+              <td class="td-num">~4,3</td>
+              <td>ČSÚ, MPSV 2026</td>
+            </tr>
+            <tr>
+              <td>Uchazeči na místo v Ústeckém kraji (leden 2026)</td>
+              <td class="td-num">~9,1</td>
+              <td>ČSÚ, Ústecký kraj 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">BrandSim</div>
+        <p class="footer-desc">Interaktivní simulátor osobního brandu pro výukové účely. Data z akademicky validovaných výzkumů.</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-sources-title">Primární zdroje</div>
+        <ul class="footer-sources">
+          <li><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.02662/full" target="_blank" rel="noopener">Frontiers in Psychology, 2019</a></li>
+          <li><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/peps.12412" target="_blank" rel="noopener">Personal Brand Equity Scale, Gorbatov et al.</a></li>
+          <li><a href="https://csu.gov.cz/ulk/nezamestnanost-v-usteckem-kraji-k-31-1-2026-podle-mpsv" target="_blank" rel="noopener">ČSÚ — Nezaměstnanost Ústecký kraj 2026</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="pplx-credit">Created with Perplexity Computer</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
